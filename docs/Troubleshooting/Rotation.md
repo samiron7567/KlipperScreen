@@ -99,6 +99,16 @@ here are some examples:
 
     [Raspberry Display docs](https://www.raspberrypi.com/documentation/accessories/display.html)
 
+???+ example "Using a dtoverlay config on a Raspberry Pi"
+
+    #### Using a dtoverlay config on a Raspberry Pi
+    In /boot/config.txt (or /boot/firmware/config.txt)
+
+    with some display you can add rotate, like this example for a 3.5" 
+    ```bash
+    dtoverlay=waveshare35b-v2,rotate=270,drm,speed=30000000,fps=60
+    ```
+
 ??? example "Raspberry Pi legacy mode (works with vc4-fkms-v3d)"
 
     #### Raspberry Pi legacy mode (works with vc4-fkms-v3d)
@@ -125,15 +135,6 @@ here are some examples:
     | 0x20000    | vertical flip |
 
     [Read the official docs for more info](https://www.raspberrypi.com/documentation/computers/config_txt.html)
-
-??? example "Using a dtoverlay config on a Raspberry Pi"
-
-    #### Using a dtoverlay config on a Raspberry Pi
-    In /boot/config.txt (or /boot/firmware/config.txt)
-    you can add rotate to some drivers like this example
-    ```bash
-    dtoverlay=waveshare35b-v2,rotate=270,drm,speed=30000000,fps=60
-    ```
 
 ??? example "Using a screen installed with goodtft-LCD-show"
 
