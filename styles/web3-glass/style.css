@@ -40,12 +40,16 @@
 
 window {
     background-color: @bg;
+    background-image: url("./styles/web3-glass/images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 junction,
 list row,
 treeview.view {
-    background-color: @bg;
+    background-color: transparent;
 }
 
 /* ── Buttons ── */
