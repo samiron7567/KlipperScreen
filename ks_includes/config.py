@@ -252,8 +252,8 @@ class KlipperScreenConfig:
             {"theme": {
                 "section": "main", "name": _("Icon Theme"), "type": "dropdown",
                 "tooltip": _("Changes how the interface looks"),
-                "value": "z-bolt", "callback": screen.change_theme, "options": [
-                    {"name": "Z-bolt" + " " + _("(default)"), "value": "z-bolt"}]}},
+                "value": "web3-glass", "callback": screen.change_theme, "options": [
+                    {"name": "Web3 Glass" + " " + _("(default)"), "value": "web3-glass"}]}},
             {"print_estimate_method": {
                 "section": "main", "name": _("Estimated Time Method"), "type": "dropdown",
                 "tooltip": _("Changes how the time remaining is calculated"),

@@ -1,0 +1,513 @@
+/* Web3 Glass theme for KlipperScreen
+ * Translucent glass panels, cyan/teal accents, dark backdrop
+ * Created for Sam'Z Voron 2.4
+ */
+
+/* ── Palette ── */
+@define-color bg           #0a0e14;
+@define-color bg-glass     rgba(14, 20, 30, 0.72);
+@define-color bg-glass2    rgba(20, 30, 44, 0.55);
+@define-color bg-panel     rgba(16, 24, 36, 0.85);
+@define-color accent       #00d4ff;
+@define-color accent-dim   #0097b8;
+@define-color accent-glow  rgba(0, 212, 255, 0.18);
+@define-color border-glass rgba(0, 212, 255, 0.15);
+@define-color border-light rgba(255, 255, 255, 0.06);
+
+@define-color color1       #00d4ff;
+@define-color color2       #a855f7;
+@define-color color3       #10b981;
+@define-color color4       #f59e0b;
+
+@define-color text         #e0f0ff;
+@define-color text-inv     #0a0e14;
+@define-color text-dim     rgba(224, 240, 255, 0.55);
+@define-color lines        rgba(224, 240, 255, 0.18);
+
+@define-color active       rgba(0, 212, 255, 0.22);
+@define-color active-solid #0c2a38;
+
+@define-color echo         rgba(16, 185, 129, 0.85);
+@define-color warning      #f59e0b;
+@define-color error        rgba(239, 68, 68, 0.9);
+
+@define-color switch-scale-bg #00d4ff;
+
+/* ── Base Elements ── */
+* {
+    color: @text;
+}
+
+window {
+    background-color: @bg;
+}
+
+junction,
+list row,
+treeview.view {
+    background-color: @bg;
+}
+
+/* ── Buttons ── */
+button {
+    background-color: @bg-glass;
+    border: 1px solid @border-glass;
+    border-radius: 0.75em;
+}
+
+button:hover {
+    background-color: @active;
+    border-color: @accent-dim;
+}
+
+button:active,
+button.active,
+.button_active {
+    background-color: @active;
+    border-color: @accent;
+}
+
+.active image {
+    background-color: @active;
+}
+
+button:disabled {
+    opacity: 0.4;
+}
+
+/* Color-coded buttons with glass effect */
+button.color1 {
+    background-color: @bg-glass;
+    border-color: @border-glass;
+    border-bottom: 0.35em solid @color1;
+    border-radius: 0.75em;
+}
+
+button.color2 {
+    background-color: @bg-glass;
+    border-color: @border-glass;
+    border-bottom: 0.35em solid @color2;
+    border-radius: 0.75em;
+}
+
+button.color3 {
+    background-color: @bg-glass;
+    border-color: @border-glass;
+    border-bottom: 0.35em solid @color3;
+    border-radius: 0.75em;
+}
+
+button.color4 {
+    background-color: @bg-glass;
+    border-color: @border-glass;
+    border-bottom: 0.35em solid @color4;
+    border-radius: 0.75em;
+}
+
+button.color1:active,
+button.color2:active,
+button.color3:active,
+button.color4:active {
+    border-style: none;
+    background-color: @active;
+}
+
+button.color1:disabled,
+button.color2:disabled,
+button.color3:disabled,
+button.color4:disabled {
+    border-bottom-style: solid;
+}
+
+/* Update / Invalid buttons */
+button.update {
+    background-color: @bg-glass;
+    border: 0;
+    border-bottom: 0.3em solid @echo;
+    border-radius: 0.75em;
+}
+
+button.invalid {
+    background-color: @bg-glass;
+    border: 0;
+    border-bottom: 0.3em solid @error;
+    border-radius: 0.75em;
+}
+
+button.update:active,
+button.invalid:active {
+    border-style: none;
+}
+
+/* Status button */
+button.status {
+    background-color: transparent;
+    border: 1px solid @border-glass;
+}
+
+/* File list button */
+button.file-list {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid @border-glass;
+}
+
+/* ── Combo Box ── */
+combobox button,
+combobox arrow {
+    background-color: @bg-glass2;
+    border-color: @border-glass;
+    border-radius: 0.7em;
+}
+
+menu,
+menuitem {
+    background-color: @bg-panel;
+    border-color: @border-glass;
+}
+
+cellview {
+    color: @text;
+}
+
+/* ── Entry / Input ── */
+entry {
+    background-color: @bg-glass2;
+    border: 1px solid @border-glass;
+    border-radius: 0.5em;
+    color: @text;
+}
+
+/* ── Labels ── */
+label {
+    color: @text;
+}
+
+/* ── Switch ── */
+treeview.view check,
+switch {
+    background-color: @active-solid;
+    border-radius: 3em;
+}
+
+treeview.view check:checked,
+switch:checked {
+    background-color: @accent-dim;
+}
+
+treeview.view check:checked {
+    -gtk-icon-source: url("./styles/web3-glass/images/complete.svg");
+}
+
+/* ── Scale / Slider ── */
+trough {
+    background-color: rgba(14, 20, 30, 0.6);
+    border: 1px solid @border-glass;
+    border-radius: 0.5em;
+    color: @text;
+}
+
+trough highlight,
+trough progress {
+    background-color: @accent-dim;
+    border-color: @bg;
+    border-radius: 0.5em;
+    color: @text;
+}
+
+scale mark {
+    color: @text-dim;
+}
+
+scale trough slider {
+    background-color: @accent;
+    border-radius: 1em;
+}
+
+/* ── Scrollbar ── */
+scrollbar,
+scrollbar button,
+scrollbar trough {
+    background-color: @bg;
+    border: 0;
+}
+
+scrollbar slider {
+    background-color: rgba(0, 212, 255, 0.25);
+    border-radius: 0.7em;
+}
+
+/* ── Text views ── */
+textview .time {
+    color: @text-dim;
+}
+
+/* ── Separator ── */
+separator {
+    background-color: @border-glass;
+}
+
+/* ── Title Bar ── */
+.title_bar {
+    background-color: @bg-panel;
+    border-bottom: 1px solid @border-glass;
+}
+
+/* ── Content area ── */
+.content {
+    margin: 0 0.1em;
+}
+
+/* ── Dialog ── */
+.dialog {
+    background-color: @bg-panel;
+    border: 1px solid @border-glass;
+    border-radius: 1em;
+}
+
+.dialog button {
+    background-color: @bg-glass;
+    border: 1px solid @border-glass;
+    border-radius: 0.75em;
+}
+
+.dialog button:active {
+    background-color: @active;
+}
+
+.dialog-error {
+    border-bottom: 0.4em solid @error;
+}
+
+.dialog-warning {
+    border-bottom: 0.4em solid @warning;
+}
+
+.dialog-info {
+    border-bottom: 0.4em solid @color4;
+}
+
+.dialog-default {
+    border-bottom: 0.4em solid @color3;
+}
+
+.dialog-secondary {
+    border-bottom: 0.4em solid @color2;
+}
+
+.dialog-primary {
+    border-bottom: 0.4em solid @color1;
+}
+
+.dialog .image-button {
+    background-color: transparent;
+    border: 0;
+}
+
+/* ── Toggle Buttons ── */
+.horizontal_togglebuttons {
+    border-color: @border-glass;
+    background-color: @bg-glass;
+    border-radius: 0;
+}
+
+.horizontal_togglebuttons_active {
+    background-color: @active;
+    font-weight: 600;
+}
+
+/* ── Fan Slider ── */
+.fan_slider {
+    color: @text;
+}
+
+/* ── Frame Items (settings rows etc) ── */
+.frame-item {
+    border-bottom: 1px solid @border-glass;
+}
+
+/* ── Heater / Graph ── */
+.heatergraph {
+    background-color: transparent;
+}
+
+.heater-grid button {
+    background-color: @bg-glass;
+    border: 1px solid @border-glass;
+    border-radius: 0.6em;
+}
+
+/* ── Keyboard ── */
+.keyboard_pad {
+    background-color: @bg-glass;
+    border: 1px solid @border-glass;
+    border-radius: 0.7em;
+}
+
+/* ── Numpad ── */
+.numpad_key {
+    border-color: @border-glass;
+    background-color: @bg-glass;
+}
+
+.numpad_tleft {
+    border-top-left-radius: 0.7em;
+}
+
+.numpad_tright {
+    border-top-right-radius: 0.7em;
+}
+
+.numpad_bleft {
+    border-bottom-left-radius: 0.7em;
+}
+
+.numpad_bright {
+    border-bottom-right-radius: 0.7em;
+}
+
+/* ── Message Popups ── */
+.message_popup {
+    background-color: @bg-panel;
+    border: 1px solid @border-glass;
+    border-radius: 1em;
+}
+
+.message_popup_echo,
+.message_popup_echo button {
+    background-color: @echo;
+}
+
+.message_popup_warning,
+.message_popup_warning button {
+    background-color: @warning;
+}
+
+.message_popup_error,
+.message_popup_error button {
+    background-color: @error;
+}
+
+/* ── Printing ── */
+.printing-status,
+.printing-progress-text,
+.printing-status-label {
+    color: @text;
+}
+
+.printing-filename {
+    color: @accent;
+}
+
+.printing-info button {
+    background-color: @bg-glass;
+    border: 1px solid @border-glass;
+    border-radius: 0.5em;
+}
+
+/* ── Error Message Full Screen ── */
+.message {
+    border: 1px solid @error;
+    background-color: rgba(239, 68, 68, 0.85);
+    color: @text;
+}
+
+.message button {
+    background-color: @text;
+    color: @text-inv;
+}
+
+/* ── Warning / Error Classes ── */
+.warning {
+    background-color: rgba(245, 158, 11, 0.7);
+}
+
+.error {
+    background-color: rgba(239, 68, 68, 0.7);
+}
+
+/* ── Popover ── */
+popover {
+    background-color: @bg-panel;
+    border: 1px solid @border-glass;
+    border-radius: 0.75em;
+}
+
+popover button {
+    background-color: @bg-glass;
+    border: 0;
+    border-bottom: 1px solid @border-glass;
+}
+
+/* ── Screensaver ── */
+.screensaver,
+.screensaver button,
+.screensaver button:hover,
+.screensaver button:focus,
+.screensaver button:active {
+    background-color: black;
+    border: 0;
+}
+
+/* ── Lock ── */
+.lock,
+.lock button,
+.lock button:hover,
+.lock button:focus,
+.lock button:active {
+    border: 0;
+    background-color: transparent;
+}
+
+.lockscreen_entry {
+    border: 1px solid @border-glass;
+    background-color: @bg-glass2;
+}
+
+.lockscreen_button {
+    border: 1px solid @border-glass;
+}
+
+/* ── Filament Sensor ── */
+.filament_sensor_detected {
+    background-color: @echo;
+}
+
+.filament_sensor_empty {
+    background-color: @error;
+}
+
+/* ── System / Updater ── */
+.updater-item {
+    border-bottom: 1px solid @border-glass;
+}
+
+.system-program-grid {
+    background-color: transparent;
+}
+
+/* ── Option slider max override ── */
+.option_slider_max trough highlight,
+trough progress {
+    background-color: @error;
+}
+
+/* ── Graph labels ── */
+.graph_label {
+    border-left-style: solid;
+    border-left-width: 0.4em;
+}
+
+button.graph_label {
+    background-color: transparent;
+    border: 0;
+    border-left-style: solid;
+    border-left-width: 0.4em;
+}
+
+/* ── Flowbox ── */
+flowbox button {
+    background-color: @bg-glass;
+    border: 1px solid @border-glass;
+    border-radius: 0.6em;
+}
